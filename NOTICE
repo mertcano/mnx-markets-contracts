@@ -1,0 +1,36 @@
+MNX Exchange Contracts
+
+This repository is licensed under GPL-3.0-or-later (see LICENSE), except for
+the third-party code below, which keeps its own license.
+
+Bluefin and dYdX perpetual contracts
+  The MNX contracts started from Bluefin's EVM exchange contracts
+  (https://github.com/fireflyprotocol/bluefin-exchange-contracts-evm),
+  which build on dYdX's v1 perpetual contracts
+  (https://github.com/dydxprotocol/perpetual). Bluefin's repository has an
+  Apache-2.0 root LICENSE, while its Solidity files carry GPL-3.0-or-later
+  SPDX notices. dYdX's code is Copyright 2020 dYdX Trading Inc. and licensed
+  under the Apache License, Version 2.0. contracts/libraries/Require.sol and
+  contracts/libraries/TypedSignature.sol, and their copies under
+  deployed-builds/, are modified versions of dYdX files and keep dYdX's
+  notice.
+
+Pyth Lazer
+  contracts/vendor/pyth-lazer/ comes from pyth-network/pyth-crosschain
+  (https://github.com/pyth-network/pyth-crosschain), Copyright 2025 Pyth Data
+  Association, licensed under the Apache License, Version 2.0; see
+  contracts/vendor/pyth-lazer/LICENSE. PythLazerLib.sol was modified: every
+  function's visibility was changed from public to internal.
+
+Chainlink
+  contracts/vendor/chainlink/AggregatorV3Interface.sol comes unmodified from
+  @chainlink/contracts 0.5.1 (https://github.com/smartcontractkit/chainlink),
+  Copyright (c) 2018 SmartContract ChainLink, Ltd., MIT License; see
+  contracts/vendor/chainlink/LICENSE.
+
+OpenZeppelin Contracts
+  lib/ holds OpenZeppelin Contracts 5.6.1 as git submodules under the MIT
+  License; each submodule includes its license.
+
+The full text of the Apache License, Version 2.0 is in
+licenses/Apache-2.0.txt.

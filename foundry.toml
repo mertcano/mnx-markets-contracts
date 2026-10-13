@@ -1,0 +1,37 @@
+# Compiler settings the mainnet contracts were built with. README.md lists
+# which mainnet contracts each profile reproduces.
+[profile.default]
+src = "contracts"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.26"
+evm_version = "cancun"
+via_ir = true
+optimizer = true
+optimizer_runs = 1_000_000
+auto_detect_remappings = false
+remappings = [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+    "@chainlink/contracts/src/v0.8/interfaces/=contracts/vendor/chainlink/",
+]
+
+# MNXMinimalForwarder was deployed with 150 optimizer runs.
+[profile.forwarder]
+optimizer_runs = 150
+out = "out-forwarder"
+cache_path = "cache-forwarder"
+
+# Older builds still deployed on mainnet; see deployed-builds/README.md.
+[profile.deployed-2026-08-06]
+src = "deployed-builds/2026-08-06/contracts"
+out = "out-2026-08-06"
+cache_path = "cache-2026-08-06"
+
+[profile.deployed-2026-07-18]
+src = "deployed-builds/2026-07-18/contracts"
+out = "out-2026-07-18"
+cache_path = "cache-2026-07-18"
+
+[lint]
+lint_on_build = false
